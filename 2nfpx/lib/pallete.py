@@ -1,0 +1,18 @@
+CC_COLOURS = [
+    ("white",     "F0F0F0", "0"),
+    ("orange",    "F2B233", "1"),
+    ("magenta",   "E57FD8", "2"),
+    ("lightBlue", "99B2F2", "3"),
+    ("yellow",    "DEDE6C", "4"),
+    ("line",      "7FCC19", "5"),
+    ("pink",      "F2B2CC", "6"),
+    ("grey",      "4C4C4C", "7"),
+    ("lightGrey", "999999", "8"),
+    ("cyan",      "4C99B2", "9"),
+    ("purple",    "B266E5", "a"),
+    ("blue",      "3366CC", "b"),
+    ("brown",     "7F664C", "c"),
+    ("green",     "57A64E", "d"),
+    ("red",       "CC4C4C", "e"),
+    ("black",     "191919", "f"),
+]
