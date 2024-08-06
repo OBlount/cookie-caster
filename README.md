@@ -2,7 +2,7 @@
 
 _A [CC: Tweaked](https://tweaked.cc/) render engine to convert your images and display them in Minecraft_
 <div align="center">
-	<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjI0MTcxOGY0a2c1cnQyemY3cm5ycnlzZ2duZTJtNTh3NjM2enB4YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cpYN50eSMbac3Phf4w/giphy.gif">
+	<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjI0MTcxOGY0a2c1cnQyemY3cm5ycnlzZ2duZTJtNTh3NjM2enB4YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cpYN50eSMbac3Phf4w/giphy-downsized-large.gif">
 </div>
 
 ## :memo: How to
