@@ -3,7 +3,7 @@ import PIL
 from PIL import Image
 from tqdm import tqdm
 from colorthief import ColorThief
-from lib.pallete import CC_COLOURS as ccColours
+from lib.palette import CC_COLOURS as ccColours
 from lib.util import fileWhitelist
 
 def generate(inDir, outDir, numberOfMonitors):
@@ -22,16 +22,16 @@ def toNFPX(imagePath, frameIndex, outDir, modColourPalette=True):
     buffer = []
     image  = PIL.Image.open(imagePath)
     pixels = image.load()
-    frameColourPallete = getColourPalette(imagePath) if modColourPalette else ccColours
+    frameColourpalette = getColourPalette(imagePath) if modColourPalette else ccColours
 
-    # Write pallete to buffer, each colour seperated by a new line
-    for colour in frameColourPallete:
+    # Write palette to buffer, each colour seperated by a new line
+    for colour in frameColourpalette:
         buffer.append(f"0x{colour[1].upper()}\n")
     
     # Write pixel colour to buffer
     for i in range(image.height):
         for j in range(image.width):
-            buffer.append(normaliseColour(pixels[j, i], frameColourPallete))
+            buffer.append(normaliseColour(pixels[j, i], frameColourpalette))
     
     # Write buffer to nfpx file
     with open(f"{outDir}frame_{frameIndex:08}.nfpx", "a", newline="\r\n") as file:
@@ -46,10 +46,10 @@ def getColourPalette(imagePath):
         palette.append((0, 0, 0))
     return [(f"modded_{ccColours[i][0]}", "%02x%02x%02x" % palette[i], hex(i)[2:]) for i in range(0, len(palette))]
 
-def normaliseColour(rgb, pallete):
+def normaliseColour(rgb, palette):
     bestColourCode = "f"
     bestDistance   = float("inf")
-    for (_, colour, colourCode) in pallete:
+    for (_, colour, colourCode) in palette:
         selectedColour = hexToRGB(colour)
         if rgb == 0:
             rgb = (0, 0, 0)

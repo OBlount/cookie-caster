@@ -3,7 +3,7 @@ local chunkManager = {}
 -- chunk = {
 --     threadLock -- locks the chunk/resource down
 --     monitorId  -- the monitor id the chunk is responsible for
---     pallete    -- the colour pallete the chunk uses
+--     palette    -- the colour palette the chunk uses
 --     encoding   -- the image encoding
 -- }
 
@@ -16,7 +16,7 @@ function chunkManager.updateChunkPool(currentFrameIndex)
         CHUNK_POOL[i] = {
             threadLock = false,
             monitorId  = FRAME_TABLE[currentFrameIndex][i].monitorId,
-            pallete    = FRAME_TABLE[currentFrameIndex][i].colourPallete,
+            palette    = FRAME_TABLE[currentFrameIndex][i].colourpalette,
             encoding   = FRAME_TABLE[currentFrameIndex][i].encoding
         }
     end
@@ -35,7 +35,7 @@ function chunkManager.renderChunk(chunk)
     monitor = MONITORS_TABLE[chunk.monitorId]
     monitor.clear()
     monitor.setTextScale(0.5)
-    chunkManager.setColourPallete(monitor, chunk.pallete)
+    chunkManager.setColourpalette(monitor, chunk.palette)
     for i=1, HEIGHT
     do
         monitor.setCursorPos(1, i)
@@ -45,8 +45,8 @@ function chunkManager.renderChunk(chunk)
     end
 end
 
-function chunkManager.setColourPallete(monitor, pallete)
-    for i=0, 15 do monitor.setPaletteColour(2^i, tonumber(pallete[i+1], 16)) end
+function chunkManager.setColourpalette(monitor, palette)
+    for i=0, 15 do monitor.setPaletteColour(2^i, tonumber(palette[i+1], 16)) end
 end
 
 return chunkManager

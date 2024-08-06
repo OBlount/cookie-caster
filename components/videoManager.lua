@@ -9,8 +9,8 @@ function videoManager.loadFramesToMemory(files)
         FILE                        = io.open(IN_DIR .. fileName)
         for i=1, #MONITORS_TABLE
         do
-            frame = { monitorId=i, colourPallete={}, encoding=nil }
-            for i=1, 16 do table.insert(frame.colourPallete, FILE.read(FILE, 'l')) end
+            frame = { monitorId=i, colourpalette={}, encoding=nil }
+            for i=1, 16 do table.insert(frame.colourpalette, FILE.read(FILE, 'l')) end
             frame.encoding = FILE.read(FILE, 'l')
             table.insert(FRAME_TABLE[#FRAME_TABLE], frame)
         end
@@ -28,8 +28,8 @@ function videoManager.loadMonoFileToMemory()
         FRAME_TABLE[#FRAME_TABLE+1] = {}
         for i=1, #MONITORS_TABLE
         do
-            frame = { monitorId=i, colourPallete={}, encoding=nil }
-            for i=1, 16 do table.insert(frame.colourPallete, FILE.read(FILE, 'l')) end
+            frame = { monitorId=i, colourpalette={}, encoding=nil }
+            for i=1, 16 do table.insert(frame.colourpalette, FILE.read(FILE, 'l')) end
             frame.encoding = FILE.read(FILE, 'l')
             table.insert(FRAME_TABLE[#FRAME_TABLE], frame)
         end
