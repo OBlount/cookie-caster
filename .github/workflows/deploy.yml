@@ -1,0 +1,22 @@
+---
+name: 'deploy'
+
+on:
+  push:
+    tags:        
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  peanut-butter-paste:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Checkout code'
+      uses: 'actions/checkout@v4'
+
+    - name: 'Paste'
+      uses: 'OBlount/peanut-butter-paste@v1'
+      with:
+        dir_to_upload: './'
+        ext_whitelist: 'lua'
+      env:
+        PASTEBIN_API_KEY: ${{ secrets.PASTEBIN_API_KEY }}
