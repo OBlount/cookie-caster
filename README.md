@@ -24,9 +24,8 @@ Input the number of monitor rows and columns you wish to use in-game. If you're 
 * type: `m.setTextScale(0.5)` and then `m.getSize()`. This should output the width and height respectively, and should be the numbers you use in the python conversion script
 
 ### Running cookie-caster in Minecraft
-1. Copy `cookie-caster/` into your minecraft save folder: `...saves/<saveGameName>/computercraft/computer/<computerID/`
+1. Clone down the `install.lua` script from pastebin by running `pastebin get <code> install.lua` in your advanced computer. The latest release and subsequently the latest `<code>` can be found on the 'releases' github page. If you don't want to use pastebin, then manually copy your local version of the code into the advanced computer's folder on Windows
 * **Optional:** configure computer craft behaviour like max folder size in `...saves/<saveGameName>/serverconfig/computercraft-server.toml`. I recommend doing this if you require more space to hold bigger video
-* **Optional:** delete `2nfpx/` folder (and git files) after copying the project files into your minecraft save. The python script does not need to be there
 2. Copy the `*.nfpx` file(s) that you generated located in `2nfpx/build/` to the minecraft save's `cookie-caster/build/`. The frames must be in order if you desire video rendering
 3. Finally, edit your config found in the `cookie-caster/` folder in-game:
 * Make sure the width and height are the same as the monitor size and when you converted your image
